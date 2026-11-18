@@ -22,6 +22,8 @@ profile ollama @{exec_path} flags=(attach_disconnected) {
 
   @{exec_path} mrix,
 
+  @{lib}/ollama/llama-server rix,
+
   /tmp/ollama@{int}/runners/*/*                mr,
   /tmp/ollama@{int}/runners/*/ollama_*_server  rix, # TODO: rPx and remove graphics from here.
 
@@ -47,6 +49,9 @@ profile ollama @{exec_path} flags=(attach_disconnected) {
   @{sys}/devices/@{pci}/drm/card@{int}/ r,
   @{sys}/devices/@{pci}/drm/card@{int}/*/ r,
   @{sys}/devices/@{pci}/numa_node r,
+  @{sys}/fs/cgroup/ r,
+  @{sys}/fs/cgroup/system.slice/ r,
+  @{sys}/fs/cgroup/system.slice/ollama.service/ r,
   @{sys}/fs/cgroup/system.slice/ollama.service/cpu.max r,
 
         @{PROC}/devices r,
