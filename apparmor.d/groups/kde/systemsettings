@@ -116,6 +116,8 @@ profile systemsettings @{exec_path} flags=(attach_disconnected,mediate_deleted) 
   owner @{user_share_dirs}/user-places.xbel r,
   owner @{user_share_dirs}/wallpapers/{,**} r,
 
+  owner @{user_state_dirs}/kinfocenterstaterc r,
+
         @{run}/mount/utab r,
   owner @{run}/user/@{uid}/#@{int} rwl,
   owner @{run}/user/@{uid}/systemsettings@{rand6}.@{int}.kioworker.socket rwl -> @{run}/user/@{uid}/#@{int},
