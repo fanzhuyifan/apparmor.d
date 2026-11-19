@@ -159,6 +159,7 @@ profile kwin_wayland @{exec_path} flags=(attach_disconnected,mediate_deleted) {
   @{run}/mount/utab r,
 
   @{run}/udev/data/+acpi:* r,             # Exposes ACPI objects (power buttons, batteries, thermal)
+  @{run}/udev/data/+auxiliary:acpi.video_bus.@{int} r, # For ACPI video buses
   @{run}/udev/data/+dmi:* r,              # for motherboard info
   @{run}/udev/data/+hid:* r,              # For Human Interface Device (mice, controllers, drawing tablets, scanners)
   @{run}/udev/data/+i2c:* r,              # For Inter-Integrated Circuit, low-speed peripherals (sensors, EEPROMs, etc.)
