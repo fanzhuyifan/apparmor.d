@@ -23,7 +23,8 @@ profile systemd-inhibit @{exec_path} flags=(attach_disconnected) {
 
   @{att}@{run}/systemd/inhibit/@{int}.ref rw,
 
-  @{PROC}/@{pid}/comm r,
+        @{PROC}/@{pid}/comm r,
+  owner @{PROC}/@{pid}/stat r,
 
   include if exists <local/systemd-inhibit>
 }
